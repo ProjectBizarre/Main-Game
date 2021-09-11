@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"flameworkVersion": "1.0.0-beta.3",
+	"identifiers": {
+		"project-bizzare:out/shared/stand@Client": "project-bizzare:out/shared/stand@Client",
+		"project-bizzare:out/shared/networking@GlobalEvents": "project-bizzare:out/shared/networking@GlobalEvents",
+		"project-bizzare:out/shared/stand@Server": "project-bizzare:out/shared/stand@Server",
+		"project-bizzare:out/shared/data@Server": "project-bizzare:out/shared/data@Server"
+	}
+}
