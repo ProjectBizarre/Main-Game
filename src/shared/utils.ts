@@ -40,13 +40,9 @@ export function DamageHitbox(player1: Player,damage: number, char: Model,root: B
 							onhit(hitHum, hitHumRP)
 						}
 						let playerdata = Data.Server.Data[player1.UserId]
-						if (playerdata.Data.xp + 1 >= getMaxXp(playerdata.Data.level)) {
-							playerdata.Data.xp = 0
-							playerdata.Data.level += 0.1
-						} else {
-							playerdata.Data.xp += 0.1
-						}
+						addXP(1,player1)
 						GlobalEvents.server.setXP(player1, playerdata.Data.level,playerdata.Data.xp)
+						GlobalEvents.server.NumericDisplay(player1, hitHumRP, damage, "-0")
 						hitHum.TakeDamage(damage)
 						Hitbox.Destroy()
 						
@@ -59,13 +55,9 @@ export function DamageHitbox(player1: Player,damage: number, char: Model,root: B
 							onhit(hitHum, hitHumRP)
 						}
 						let playerdata = Data.Server.Data[player1.UserId]
-						if (playerdata.Data.xp + 1 >= getMaxXp(playerdata.Data.level)) {
-							playerdata.Data.xp = 0
-							playerdata.Data.level += 0.1
-						} else {
-							playerdata.Data.xp += 0.1
-						}
+						addXP(1,player1)
 						GlobalEvents.server.setXP(player1, playerdata.Data.level,playerdata.Data.xp)
+						GlobalEvents.server.NumericDisplay(player1, hitHumRP, damage, "-0")
 						hitHum.TakeDamage(damage)
 						Hitbox.Destroy()
 					}
@@ -110,7 +102,7 @@ function anim(animator: AnimationTrack, Anim: string): [ animator: AnimationTrac
 		}
 	})
 
-	animator.Play(0.2, 3)	
+	animator.Play(0.1, 3)	
 	return [animator, length]
 }
 
@@ -136,11 +128,25 @@ export function getMaxXp(x: number): number {
 }
 
 
+export function addXP(x: number, p: Player) {
+	let playerdata = Data.Server.Data[p.UserId]
+	if (playerdata.Data.xp + x >= getMaxXp(playerdata.Data.level)) {
+		playerdata.Data.xp = 0
+		playerdata.Data.level += x
+		GlobalEvents.server.LevelUp(p)
+	} else {
+		playerdata.Data.xp += x
+	}
+}
+
 export function nullMove(id: number): Move {
 	return {
 		id,
+		key: "null",
 		name: "null",
+		description: "null",
 		stamina: 0,
+
 		run: (ctx, done) => {done()},
 		
 	}

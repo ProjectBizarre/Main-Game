@@ -7,6 +7,8 @@ import { GlobalEvents } from "shared/networking";
 const punch: Move = {
 	id: 1,
 	name: "Punch",
+	key: "M1",
+	description: "Deals 14 damage per punch, can be repeated multiple times and ends with a heavy punch that deals 30 damage.",
 	stamina: 15,
 	run: (ctx, done) => {
 		
@@ -57,7 +59,10 @@ const punch: Move = {
 
 const Heavy: Move = {
 	id: 3,
-	name: "Heavy Punch",
+	name: "ORAA!!!",
+	key: "R",
+	description: "A Heavy punch dealing 32 damage, stuns players for a little bit longer than normal.",
+
 	stamina: 45,
 	run: (ctx, done) => {
 		
@@ -91,7 +96,9 @@ const Heavy: Move = {
 
 const barage: Move = {
 	id: 2,
-	name: "Barage",
+	name: "ORA ORA ORA ORA ORA... ORA!",
+	key: "E",
+	description: "Deals 14 damage per punch, can be repeated multiple times and ends with a heavy punch that deals 30 damage.",
 	stamina: 102,
 	run: (ctx, done) => {
 		
@@ -133,11 +140,12 @@ const stand: Stand = {
 		2: barage,
 		3: Heavy
 	},
-	standlessmoveSet: {
+	meleeMoveSet: {
 		1: nullMove(1),
 		2: nullMove(2),
 		3: nullMove(3),
-	}
+	},
+	animations: {}
 }
 
 export default stand

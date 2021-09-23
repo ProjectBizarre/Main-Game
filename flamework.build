@@ -5,6 +5,10 @@
 		"project-bizzare:out/shared/stand@Client": "project-bizzare:out/shared/stand@Client",
 		"project-bizzare:out/shared/networking@GlobalEvents": "project-bizzare:out/shared/networking@GlobalEvents",
 		"project-bizzare:out/shared/stand@Server": "project-bizzare:out/shared/stand@Server",
-		"project-bizzare:out/shared/data@Server": "project-bizzare:out/shared/data@Server"
+		"project-bizzare:out/shared/data@Server": "project-bizzare:out/shared/data@Server",
+		"project-bizzare:out/client/gui/menu@Menu": "project-bizzare:out/client/gui/menu@Menu",
+		"project-bizzare:out/shared/types@Item": "project-bizzare:out/shared/types@Item",
+		"project-bizzare:out/shared/types@UsableItem": "project-bizzare:out/shared/types@UsableItem",
+		"project-bizzare:out/shared/types@Inventory": "project-bizzare:out/shared/types@Inventory"
 	}
 }

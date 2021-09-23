@@ -9,17 +9,15 @@ const Healthbar: Hooks.FC<Props> = (props) => {
 	let Humanoid = props.player.Character?.FindFirstChild("Humanoid") as Humanoid
 	let Size: UDim2;
 	if (Humanoid !== undefined) {
-		Size = new UDim2((Humanoid.Health / Humanoid.MaxHealth) / 4,0,0.02,0)
+		Size = new UDim2((Humanoid.Health / Humanoid.MaxHealth),0,0.076,0)
 	} else {
 		Size = new UDim2(1,0,0.02,0)
 	}
 	return (
 		<frame
+		Position={new UDim2(0.327, 0, 0.50 ,0)}
+		Size={new UDim2(1, 0, 1 ,0)}
 		Transparency={1}
-		BackgroundColor3={Color3.fromRGB(0,0,0)}
-		Size={new UDim2(1,0,1,36)}
-		Position={new UDim2(0.115,0,0.94,-36)}
-		ZIndex={1}
 		>
 			<textlabel
 			Text=""
@@ -33,10 +31,9 @@ const Healthbar: Hooks.FC<Props> = (props) => {
 
 			<textlabel
 			Text=""
-			BackgroundColor3={Color3.fromRGB(48,48,48)}
+			BackgroundColor3={Color3.fromRGB(110,64,64)}
 			ZIndex={1}
-			Position={new UDim2(-0.005, 0, -0.005 ,0)}
-			Size={new UDim2((1 / 4) + 0.01,0,0.03,0)}><uicorner></uicorner>
+			Size={new UDim2(1,0,0.076,0)}><uicorner></uicorner>
 			</textlabel>
 			
 		</frame>
